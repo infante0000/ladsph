@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kaushan+Script&family=Oswald:wght@200&family=Poppins:wght@200;400;600&display=swap');
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6ccb3;
+}
+
+.about-section {
+    animation: transitionIn 2s;
+    margin-top: -15px;
+    background-size: 65%;
+    background: #e6ccb3 url("../images/pizza_a.gif") no-repeat left;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.inner-container {
+    width: 55%;
+    float: right;
+    background-color: #f1f1f1;
+    padding: 80px;
+}
+
+.inner-container h1 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 1000;
+}
+
+.border {
+    height: 4px;
+    width: 140px;
+    background-color: #3b3937;
+}
+
+.text {
+    animation: transitionIn 4s;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1200px) {
+    .inner-container {
+        padding: 60px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .about-section {
+        background-size: 100%;
+        padding: 80px 40px;
+    }
+
+    .inner-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-section {
+        padding: 0;
+    }
+
+    .inner-container {
+        padding: 40px;
+    }
+}
+
+.footer {
+    position: absolute;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: auto;
+    bottom: 0;
+}
+
+.d-block {
+    position: relative;
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+}
+
+.bi {
+    color: #3b3937;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.logo {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2%;
+    padding: 5px;
+}
+
+.logo img {
+    width: 100%;
+}
+

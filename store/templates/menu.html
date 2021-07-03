@@ -1,0 +1,200 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+    .focus {
+    }
+</style>
+<head>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <title>L' Arte de Sapori</title>
+</head>
+
+<body>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Kaushan+Script&family=Benne&family=Oswald:wght@200&family=Poppins:wght@200;400;600&family=Noto+Serif:ital,wght@1,700&display=swap');
+    .nav-pills {
+        background-color: #3b3937;
+        border-radius: 5px;
+        color: #3b3937;
+    }
+
+    .nav-pills > li.active > a, .nav-pills,
+    .nav-pills > li.categ > a {
+        text-align: center;
+        background-color: #2b2b2b;
+        color: #e6ccb3;
+        padding: 6px 4px;
+        text-transform: uppercase;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .nav-pills > li.active > a:hover,
+    .nav-pills > li.categ > a:hover {
+        background-color: #4c4a47;
+    }
+
+    .nav-pills > li.active > a:focus,
+    .nav-pills > li.categ > a:focus {
+        background-color: #f7ba5b;
+        color: #2b2b2b;
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: #2b2b2b;
+        color: #2b2b2b;
+    }
+
+    .card, .product {
+        background-color: #f1f1f1;
+        color: #e6ccb3;
+    }
+
+    .product > h6 {
+        color: #2b2b2b;
+        font-family: 'Poppins', sans-serif;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .update-cart {
+        background-color: #3b3937;
+        color: #e6ccb3;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 5px;
+    }
+
+    .update-cart:hover{
+        background-color: #f7ba5b;
+        color: #2b2b2b;
+    }
+
+    h3 {
+        text-align: center;
+        font-family: 'Noto Serif', serif;
+        text-transform: uppercase;
+        text-decoration-line: underline;
+        color: #3b3937;
+        font-size: 50px;
+    }
+
+</style>
+
+
+
+<div class="container p-5">
+    <ul class="nav nav-pills flex-column flex-sm-row nav-boldest nav-justifies">
+        {% for category in categories %}
+        <li class="nav-item flex-sm-fill categ">
+            <a class="nav-link" data-toggle="tab" href="#{{ category.slug }}"><strong>{{ category.name }}</strong></a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+
+
+        <div class="tab-pane fade show active" id="pizza">
+            <br>
+            <h3>Pizza</h3>
+
+            <div class="row">
+                {% for pizza in pizzas %}
+                <div class="col-lg-4" align="center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ pizza.imageURL }}">
+                        <div class="box-element pizza">
+                            <h6><strong>{{ pizza.name }}</strong></h6>
+                            <hr>
+                            <button data-product={{pizza.id}} data-action="add"
+                                    class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
+                            </button>
+                            <h4 style="display: inline-block; float: right">₱{{ pizza.price|floatformat:2}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade show" id="pasta">
+            <br>
+            <h3>Pasta</h3>
+
+            <div class="row">
+                {% for pasta in pastas %}
+                <div class="col-lg-4" align="center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ pasta.imageURL }}">
+                        <div class="box-element pasta">
+                            <h6><strong>{{ pasta.name }}</strong></h6>
+                            <hr>
+                            <button data-product={{pasta.id}} data-action="add"
+                                    class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
+                            </button>
+                            <h4 style="display: inline-block; float: right">₱{{ pasta.price|floatformat:2}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade show" id="sides">
+            <br>
+            <h3>Sides</h3>
+
+            <div class="row">
+                {% for side in sides %}
+                <div class="col-lg-4" align="center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ side.imageURL }}">
+                        <div class="box-element side">
+                            <h6><strong>{{ side.name }}</strong></h6>
+                            <hr>
+                            <button data-product={{side.id}} data-action="add"
+                                    class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
+                            </button>
+                            <h4 style="display: inline-block; float: right">₱{{ side.price|floatformat:2}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="tab-pane fade show" id="beverages">
+            <br>
+            <h3>Beverages</h3>
+
+            <div class="row">
+                {% for beverage in beverages %}
+                <div class="col-lg-4" align="center">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ beverage.imageURL }}">
+                        <div class="box-element beverage">
+                            <h6><strong>{{ beverage.name }}</strong></h6>
+                            <hr>
+                            <button data-product={{beverage.id}} data-action="add"
+                                    class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
+                            </button>
+                            <h4 style="display: inline-block; float: right">₱{{ beverage.price|floatformat:2}}</h4>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+{% endblock %}
