@@ -23,7 +23,7 @@ def home(request):
 
 def registerPage(request):
     if request.user.is_authenticated:
-        return redirect('ecommWebsite:home')
+        return redirect('store:home')
     else:
         form = CreateUserForm()
 
@@ -39,7 +39,7 @@ def registerPage(request):
                     phone=phone
                 )
                 messages.success(request, 'Account was created for ' + username + '!')
-                return redirect('ecommWebsite:login')
+                return redirect('store:login')
 
         context = {'form': form}
         return render(request, 'register.html', context)
@@ -47,7 +47,7 @@ def registerPage(request):
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('ecommWebsite:menu')
+        return redirect('store:menu')
 
     else:
         if request.method == 'POST':
@@ -58,7 +58,7 @@ def loginPage(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('ecommWebsite:menu')
+                return redirect('store:menu')
             else:
                 messages.info(request, 'Username OR password is incorrect')
 
