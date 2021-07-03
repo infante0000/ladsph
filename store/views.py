@@ -68,7 +68,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('ecommWebsite:login')
+    return redirect('store:login')
 
 
 def cart(request):
