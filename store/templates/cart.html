@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="box-element">
-            <a class="btn btn-outline-dark" href="http://127.0.0.1:8000/menu">&#x2190; Continue Shopping</a>
+            <a class="btn btn-outline-dark" href="{% url 'store:menu' %}">&#x2190; Continue Shopping</a>
 
             <br>
             <br>
@@ -18,7 +18,7 @@
                     <th><h5>TOTAL <strong>₱ {{order.get_cart_total|floatformat:2}}</strong></h5></th>
                     <th>
                         <a style="float:right; margin:5px" class="btn btn-success"
-                           href="http://127.0.0.1:8000/checkout">Checkout</a>
+                           href="{% url 'store:checkout' %}">Checkout</a>
                     </th>
                 </tr>
 
