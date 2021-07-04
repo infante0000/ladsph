@@ -17,7 +17,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('date_added','name', 'quantity')
+    list_display = ('date_added', 'product', 'quantity')
 
 
 class OrderAdmin(admin.ModelAdmin):
