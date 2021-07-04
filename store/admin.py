@@ -16,6 +16,10 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone')
 
 
+class OrderItemAdmin(admin.ModelAdmin):
+    list_display = ('date_added','name', 'quantity')
+
+
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('transaction_id', 'customer', 'date_ordered', 'complete')
 
@@ -27,6 +31,6 @@ class ShippingAddressAdmin(admin.ModelAdmin):
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Customer)
 admin.site.register(Order, OrderAdmin)
-admin.site.register(OrderItem)
+admin.site.register(OrderItem, OrderItemAdmin)
 admin.site.register(ShippingAddress, ShippingAddressAdmin)
 admin.site.register(Category, CategoryAdmin)
