@@ -188,28 +188,28 @@
         </div>
         <div class="contactForm">
             <h2>Send us your thoughts!</h2>
-            <form action="https://formspree.io/f/mayabajg" method="POST">
+            <form action="https://formsubmit.co/lartedesapori.PH@gmail.com" method="POST">
                 <div class="formBox">
                     {% csrf_token %}
 
                     <div class="inputBox w50">
-                        <input type="text" required>
+                        <input type="text" name="firstname" required>
                         <span>First Name</span>
                     </div>
                     <div class="inputBox w50">
-                        <input type="text" required>
+                        <input type="text" name="lastname" required>
                         <span>Last Name</span>
                     </div>
                     <div class="inputBox w50">
-                        <input type="email" required>
+                        <input type="email" name="email" required>
                         <span>Email Address</span>
                     </div>
                     <div class="inputBox w50">
-                        <input type="tel" required pattern="[0-9]{11}">
+                        <input type="tel" name="tel" required pattern="[0-9]{11}">
                         <span>Phone Number</span>
                     </div>
                     <div class="inputBox w100">
-                        <textarea name="message" required></textarea>
+                        <textarea name="message" name="message" required></textarea>
                         <span>Write your message here...</span>
                     </div>
                     <div class="inputBox w100">
