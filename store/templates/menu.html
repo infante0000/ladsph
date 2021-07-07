@@ -12,7 +12,7 @@
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <title>L' Arte de Sapori</title>
+    <title>L' Arte dei Sapori</title>
 </head>
 
 <body>
@@ -112,7 +112,7 @@
                         <div class="box-element pizza">
                             <h6><strong>{{ pizza.name }}</strong></h6>
                             <hr>
-                            <button data-product={{pizza.id}} data-action="add"
+                            <button id="add-btn-pz" data-product={{pizza.id}} data-action="add"
                                     class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
                             </button>
                             <h4 style="display: inline-block; float: right">₱{{ pizza.price|floatformat:2}}</h4>
@@ -135,7 +135,7 @@
                         <div class="box-element pasta">
                             <h6><strong>{{ pasta.name }}</strong></h6>
                             <hr>
-                            <button data-product={{pasta.id}} data-action="add"
+                            <button id="add-btn-ps" data-product={{pasta.id}} data-action="add"
                                     class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
                             </button>
                             <h4 style="display: inline-block; float: right">₱{{ pasta.price|floatformat:2}}</h4>
@@ -158,7 +158,7 @@
                         <div class="box-element side">
                             <h6><strong>{{ side.name }}</strong></h6>
                             <hr>
-                            <button data-product={{side.id}} data-action="add"
+                            <button id="add-btn-sd" data-product={{side.id}} data-action="add"
                                     class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
                             </button>
                             <h4 style="display: inline-block; float: right">₱{{ side.price|floatformat:2}}</h4>
@@ -181,7 +181,7 @@
                         <div class="box-element beverage">
                             <h6><strong>{{ beverage.name }}</strong></h6>
                             <hr>
-                            <button data-product={{beverage.id}} data-action="add"
+                            <button id="add-btn-bv" data-product={{beverage.id}} data-action="add"
                                     class="btn btn-outline-secondary add-btn update-cart" style="display: inline-block; float: left">Add to Cart
                             </button>
                             <h4 style="display: inline-block; float: right">₱{{ beverage.price|floatformat:2}}</h4>
@@ -193,7 +193,7 @@
         </div>
     </div>
 </div>
-
+                     
 </body>
 
 

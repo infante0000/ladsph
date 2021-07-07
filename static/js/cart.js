@@ -65,4 +65,3 @@ function updateUserOrder(productId, action) {
         })
 }
 
-
